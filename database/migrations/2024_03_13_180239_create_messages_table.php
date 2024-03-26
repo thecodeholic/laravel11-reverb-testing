@@ -12,7 +12,9 @@ return new class extends Migration {
     {
         Schema::create('messages', function (Blueprint $table) {
             $table->id();
+            $table->string('group')->nullable();
             $table->string('message');
+            $table->boolean('private')->default(false);
             $table->timestamps();
         });
     }
